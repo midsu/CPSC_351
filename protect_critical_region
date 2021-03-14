@@ -21,32 +21,32 @@ void* protect_critical_region(void* n) {
   sem_init(&mutex3, 0, 1);
 
   while (!finished) {
-				// TODO: FILL IN THIS LINE
-        sem_wait(&mutex);			//tries to decrement the value of the semaphore. if value > 0 then decrement & it returns, if value = 0 wait
+	// TODO: FILL IN THIS LINE
+    sem_wait(&mutex);			//tries to decrement the value of the semaphore. if value > 0 then decrement & it returns, if value = 0 wait
     for (int j = 0; j < thread_num; ++j) { printf("\t\t\t"); }
     printf("CRITICAL(T%d)\n", thread_num);
-				// TODO: FILL IN THIS LINE
-        sem_post(&mutex);     //increments the value of the semaphore and returns.
+	// TODO: FILL IN THIS LINE
+    sem_post(&mutex);    		//increments the value of the semaphore and returns.
         
 
     sleep(2);
 
-				// TODO: FILL IN THIS LINE
-        sem_wait(&mutex2);	//tries to decrement the value of the semaphore. if value > 0 then decrement & it returns, if value = 0 wait
+	// TODO: FILL IN THIS LINE
+    sem_wait(&mutex2);			//tries to decrement the value of the semaphore. if value > 0 then decrement & it returns, if value = 0 wait
     for (int j = 0; j < thread_num; ++j) { printf("\t\t\t"); }
     printf("out of CRITICAL(T%d)\n", thread_num);
-				// TODO: FILL IN THIS LINE
-        sem_post(&mutex2);   //increments the value of the semaphore and returns.
+	// TODO: FILL IN THIS LINE
+    sem_post(&mutex2);   		//increments the value of the semaphore and returns.
        
     
     finished = i++ > 3;
 
-				// TODO: FILL IN THIS LINE
-        sem_wait(&mutex3);    //tries to decrement the value of the semaphore. if value > 0 then decrement & it returns, if value = 0 wait
+	// TODO: FILL IN THIS LINE
+    sem_wait(&mutex3);    		//tries to decrement the value of the semaphore. if value > 0 then decrement & it returns, if value = 0 wait
     for (int j = 0; j < thread_num; ++j) { printf("\t\t\t"); }
     printf("into non-critical(T%d)\n", thread_num);
-				// TODO: FILL IN THIS LINE
-        sem_post(&mutex3);    //increments the value of the semaphore and returns.
+	// TODO: FILL IN THIS LINE
+   sem_post(&mutex3);    		//increments the value of the semaphore and returns.
   }
   //distroying semaphores
   sem_destroy(&mutex);
