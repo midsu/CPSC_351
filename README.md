@@ -9,3 +9,8 @@ This assignment will involve designing two kernel modules in addition to hello.c
 
 Project 2 : UNIX Shell
 This project consist of designing a C program to serve as a shell interface.
+- fork()
+- exec()
+- wait()
+- dup2()
+- pipe()
