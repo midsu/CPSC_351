@@ -14,3 +14,13 @@ This project consist of designing a C program to serve as a shell interface.
 - wait()
 - dup2()
 - pipe()
+
+Project 3 : Bankers Algorithm
+This assignment will check to see customers request is safe and can be approved
+- bank
+- customer
+- ext_vector
+- util
+- banker_algorithm
+- bank_soln
+- customer_soln
